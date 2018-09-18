@@ -1,0 +1,18 @@
+
+version: '3.3'
+
+service:
+
+  gogs:
+    image: gogs/gogs
+    ports:
+    - '22:22'
+    - '80:80'
+    volumes:
+    - type: volume
+      source: gogs_data
+      target: /data
+
+volumes:
+  gogs_data:
+    external: false
